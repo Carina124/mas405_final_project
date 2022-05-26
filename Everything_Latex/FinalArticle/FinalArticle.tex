@@ -1,14 +1,16 @@
 \documentclass[11pt]{article}
 
 \usepackage{graphicx} % for inputing graphics
-\usepackage{fancyvrb} %%% for \VerbatimInput
-\usepackage{amssymb} 
-\usepackage{epstopdf}
-\usepackage{caption}
-\usepackage[fleqn]{amsmath}
-\usepackage{tipx}
-\usepackage{tipa}
-\usepackage{breakcites}
+\usepackage{epstopdf} % Helper Package to graphix package
+\usepackage{fancyvrb} % for \VerbatimInput (the nice inline code refrences)
+\usepackage{amssymb} % American Math Society package, creates theorems and more math things 
+\usepackage{caption} %creates captions for figures and other floating objects in paper 
+\usepackage[fleqn]{amsmath} %flegn- moves equations to the left amsmath-helps with equation building other math things
+\usepackage{tipa} % imports greek characters and other random letters heres a cool cheat sheet! https://ptmartins.info/tex/tipacheatsheet.pdf
+%\usepackage{tipx} % additional font comands for the tipa package. not 100%
+\usepackage{breakcites} % 
+
+
 
 %%%%%%%%%
 %graphics rule found from prof zes code from previous workshop. i added it thinking it can help when were ready for graphics input ? 
@@ -57,6 +59,22 @@ and Carina Kalaydjian \\[1ex]
 \date{June 7th, 2022}
 
 %%%%%%%%%%%%%%%%%
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+
+%\usepackage[backend=biber]{biblatex}
+%\addbibresource{FinalArticle.bib}
+
+\usepackage[english]{babel}\addto\captionsenglish  
+{\renewcommand{\bibname}{References}}  
+\usepackage[backend=bibtex,style=numeric]{biblatex}
+
+\usepackage{babel,blindtext}
+\addbibresource{FinalArticle.bib}
+
+\usepackage{makeidx}
+\makeindex
+
 %%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -68,8 +86,8 @@ and Carina Kalaydjian \\[1ex]
 \emph{Texto do resumo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut elementum libero, tincidunt pellentesque quam. Cras id vulputate diam. Curabitur metus lorem, feugiat vel ipsum vulputate, mattis mollis lacus. Duis lectus velit, dignissim et neque ac, venenatis mattis quam. Duis commodo vestibulum sapien at volutpat. Phasellus pretium ipsum magna, porta mollis metus venenatis eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisis arcu nibh, viverra blandit tellus feugiat a. Proin porttitor ex vel dolor vestibulum varius ut ut ante.}
 \end{abstractinenglish}
 
-
 \section{Introduction}
+here we cite \cite{web1} our glorius leader 
 
 \section{Methods}
 
@@ -79,6 +97,11 @@ and Carina Kalaydjian \\[1ex]
 
 \include{appendicitis}
 
-\bibliography{} 
+\newpage{}
+
+\printbibliography
+
+%\bibliographystyle{plain}
+%\bibliography{FinalArticle} 
 
 \end{document}
